@@ -14,6 +14,17 @@ var app = {
     app.talk( 'AvailableYears', cb )
   }),
   
+  // Sectors
+  sectors: function( cb ) {
+    app.talk( 'Sectors', function( res ) {
+      var result = {}
+      res.forEach( function( sector ) {
+        result[ sector.SectorCode ] = sector
+      })
+      cb( result )
+    })
+  },
+  
   // Communicate
   talk: function( path, fields, cb ) {
     if( !cb && typeof fields == 'function' ) {
