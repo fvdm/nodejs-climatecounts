@@ -9,6 +9,11 @@ var app = {
     version: 1
   },
   
+  // Available years
+  availableyears: function( cb ) {
+    app.talk( 'AvailableYears', cb )
+  }),
+  
   // Communicate
   talk: function( path, fields, cb ) {
     if( !cb && typeof fields == 'function' ) {
