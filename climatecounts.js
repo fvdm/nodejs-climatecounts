@@ -27,6 +27,11 @@ var app = {
   
   // Companies
   companies: function( params, cb ) {
+    if( !cb && typeof params == 'function' ) {
+      var cb = params
+      var params = {}
+    }
+    
     var result = {}
     app.talk( 'Companies', params, function( res ) {
       res.forEach( function( company ) {
