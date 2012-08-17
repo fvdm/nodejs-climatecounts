@@ -36,7 +36,13 @@ var app = {
   
   // Available years
   availableyears: function( cb ) {
-    app.talk( 'AvailableYears', cb )
+    app.talk( 'AvailableYears', function( res ) {
+      var result = {}
+      res.forEach( function( year ) {
+        result[ year.Year ] = year
+      })
+      cb( result }
+    })
   },
   
   // Sectors
