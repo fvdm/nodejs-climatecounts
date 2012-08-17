@@ -44,7 +44,7 @@ var app = {
   // Available years
   availableyears: function( cb ) {
     app.talk( 'AvailableYears', cb )
-  }),
+  },
   
   // Sectors
   sectors: function( cb ) {
