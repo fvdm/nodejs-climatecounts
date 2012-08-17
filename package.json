@@ -1,3 +1,29 @@
-# How does it work?
-
-Enter Text in Markdown format.
+{
+  "author": {
+    "name":               "Franklin van de Meent",
+    "email":              "fr@nkl.in",
+    "url":                "http://frankl.in"
+  },
+  "name":                 "climatecounts",
+  "description":          "Access ClimateCounts.org API methods",
+  "version":              "1.0.0",
+  "repository": {
+    "type":               "git",
+    "url":                "git://github.com/fvdm/nodejs-climatecounts.git"
+  },
+  "bugs": {
+    "url":                "https://github.com/fvdm/nodejs-climatecounts/issues"
+  },
+  "main":                 "climatecounts.js",
+  "dependencies":         {},
+  "devDependencies":      {},
+  "optionalDependencies": {},
+  "engines": {
+    "node":               "*"
+  },
+  "keywords":             ["climate", "environment", "statistics", "middleware", "api"],
+  "license": {
+    "type":               "Public Domain",
+    "url":                "https://github.com/fvdm/nodejs-climatecounts/raw/master/UNLICENSE"
+  }
+}
