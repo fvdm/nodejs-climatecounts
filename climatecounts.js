@@ -63,13 +63,13 @@ var app = {
       var params = {}
     }
     
-    var result = {}
     app.talk( 'Companies', params, function( res ) {
+      var result = {}
       res.forEach( function( company ) {
         result[ company.CompanyID ] = company
       })
+      cb( result )
     })
-    cb( result )
   },
   
   brands: function( cb ) {
