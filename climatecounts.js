@@ -103,7 +103,8 @@ var app = {
       response.on( 'end', function() {
         data = data.toString().trim()
         if( data.length >= 2 && data.substr(0,1) == '{' && data.substr( data.length -1, 1 ) == '}' ) {
-          cb( JSON.parse( data ) )
+          data = JSON.parse( data )
+          cb( data[ path ] )
         } else {
           cb( false )
         }
