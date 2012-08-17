@@ -46,8 +46,13 @@ var app = {
   },
   
   // Scores
-  scores: function( cb ) {
-    app.talk( 'Scores', cb )
+  scores: function( params, cb ) {
+    if( !cb && typeof params == 'function' ) {
+      var cb = params
+      var params = {}
+    }
+    
+    app.talk( 'Scores', params, cb )
   },
   
   // Communicate
