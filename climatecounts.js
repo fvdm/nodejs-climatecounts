@@ -102,7 +102,7 @@ var app = {
       response.on( 'data', function( part ) { data += part })
       response.on( 'end', function() {
         data = data.toString().trim()
-        if( data.length >= 2 && data.substr(0,1) == '{' && data.substr( data.length -2, 1 ) == '}' ) {
+        if( data.length >= 2 && data.substr(0,1) == '{' && data.substr( data.length -1, 1 ) == '}' ) {
           cb( JSON.parse( data ) )
         } else {
           cb( false )
