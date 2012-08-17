@@ -30,7 +30,8 @@ OTHER DEALINGS IN THE SOFTWARE.
 For more information, please refer to <http://unlicense.org/>
 */
 
-var http = require('http')
+var http = require('http'),
+    querystring = require('querystring')
 
 var app = {
   
@@ -38,9 +39,11 @@ var app = {
   availableyears: function( cb ) {
     app.talk( 'AvailableYears', function( res ) {
       var result = {}
-      res.forEach( function( year ) {
-        result[ year.Year ] = year
-      })
+      if( res ) {
+        res.forEach( function( year ) {
+          result[ year.Year ] = year
+        })
+      }
       cb( result )
     })
   },
@@ -49,9 +52,11 @@ var app = {
   sectors: function( cb ) {
     app.talk( 'Sectors', function( res ) {
       var result = {}
-      res.forEach( function( sector ) {
-        result[ sector.SectorCode ] = sector
-      })
+      if( res ) {
+        res.forEach( function( sector ) {
+          result[ sector.SectorCode ] = sector
+        })
+      }
       cb( result )
     })
   },
@@ -65,9 +70,11 @@ var app = {
     
     app.talk( 'Companies', params, function( res ) {
       var result = {}
-      res.forEach( function( company ) {
-        result[ company.CompanyID ] = company
-      })
+      if( res ) {
+        res.forEach( function( company ) {
+          result[ company.CompanyID ] = company
+        })
+      }
       cb( result )
     })
   },
@@ -102,7 +109,7 @@ var app = {
       var fields = {}
     }
     
-    var url = 'http://api.climatecounts.org/1/'+ path +'.json'
+    var url = 'http://api.climatecounts.org/1/'+ path +'.json?'+ querystring.stringify( fields )
     http.get( url, function( response ) {
       var data = ''
       response.on( 'data', function( part ) { data += part })
