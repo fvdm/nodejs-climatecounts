@@ -41,7 +41,7 @@ var app = {
       res.forEach( function( year ) {
         result[ year.Year ] = year
       })
-      cb( result }
+      cb( result )
     })
   },
   
