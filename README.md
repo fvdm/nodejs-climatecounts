@@ -1,4 +1,6 @@
 nodejs-climatecounts
 ====================
 
-Node.js module to access Climate Counts API
+Unofficial [Node.js](http://nodejs.org/) module to access the Climate Counts API.
+
+http://api.climatecounts.org
