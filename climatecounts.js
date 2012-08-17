@@ -45,6 +45,11 @@ var app = {
     app.talk( 'Brands', cb )
   },
   
+  // Scores
+  scores: function( cb ) {
+    app.talk( 'Scores', cb )
+  },
+  
   // Communicate
   talk: function( path, fields, cb ) {
     if( !cb && typeof fields == 'function' ) {
