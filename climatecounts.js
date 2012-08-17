@@ -55,6 +55,15 @@ var app = {
     app.talk( 'Scores', params, cb )
   },
   
+  // Aggregate scores
+  aggregatescores: function( params, cb ) {
+    if( !cb && typeof params == 'function' ) {
+      var cb = params
+      var params = {}
+    }
+    app.talk( 'AggregateScores', params, cb )
+  },
+  
   // Communicate
   talk: function( path, fields, cb ) {
     if( !cb && typeof fields == 'function' ) {
