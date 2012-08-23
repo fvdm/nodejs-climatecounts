@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/fvdm/nodejs-climatecounts.png)](http://travis-ci.org/fvdm/nodejs-climatecounts)
 nodejs-climatecounts
 ====================
 
