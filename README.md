@@ -58,30 +58,13 @@ api.companies( {Search: 'amer'}, console.log )
 
 Communicate with the API.
 
-<table>
-	<th>parameter</th>
-	<th>required</th>
-	<th>description</th>
-	<th>values</th>
-	<tr>
-		<td>path</td>
-		<td>required</td>
-		<td>the method path after the '/version/', and without the .json or .xml</td>
-		<td>Companies</td>
-	</tr>
-	<tr>
-		<td>params</td>
-		<td>optional</td>
-		<td>object with method parameters</td>
-		<td>{ Search: 'amer' }</td>
-	</tr>
-	<tr>
-		<td>callback</td>
-		<td>required</td>
-		<td>function that received the result object, or false on faillure</td>
-		<td></td>
-	</tr>
-</table>
+```
+Param      Type       Required   Description                     Example
+--------   --------   --------   -----------------------------   ----------------
+path       string     required   Path betweet /1/ and .json      Companies
+params     object     optional   Object with method parameters   {Search: 'amer'}
+callback   function   required   Function to receive result      console.log
+```
 
 
 ```js
@@ -114,24 +97,12 @@ They are parsed into an object with their CompanyID as item key, for back refere
 
 **Details: http://api.climatecounts.org/docs/Companies.htm**
 
-<table>
-	<th>parameter</th>
-	<th>required</th>
-	<th>description</th>
-	<th>values</th>
-	<tr>
-		<td>params</td>
-		<td>optional</td>
-		<td>object with method parameters</td>
-		<td>{ Search: 'amer' }</td>
-	</tr>
-	<tr>
-		<td>callback</td>
-		<td>required</td>
-		<td>function that received the result object, or false on faillure</td>
-		<td></td>
-	</tr>
-</table>
+```
+Param      Required   Description                     Example
+--------   --------   -----------------------------   ----------------
+params     optional   Object with method parameters   {Search: 'amer'}
+callback   required   Function to receive result      console.log
+```
 
 ```js
 api.companies( {Search: 'amer'}, console.log )
@@ -180,24 +151,12 @@ Returns company-specific yearly scores, individually or by sector or progress.
 
 **Details: http://api.climatecounts.org/docs/Scores.htm**
 
-<table>
-	<th>parameter</th>
-	<th>required</th>
-	<th>description</th>
-	<th>values</th>
-	<tr>
-		<td>params</td>
-		<td>optional</td>
-		<td>object with method parameters</td>
-		<td>{ Search: 'amer' }</td>
-	</tr>
-	<tr>
-		<td>callback</td>
-		<td>required</td>
-		<td>function that received the result object, or false on faillure</td>
-		<td></td>
-	</tr>
-</table>
+```
+Param      Required   Description                     Example
+--------   --------   -----------------------------   ----------------
+params     optional   Object with method parameters   {Search: 'amer'}
+callback   required   Function to receive result      console.log
+```
 
 ```js
 api.scores( {CompanyID: 1}, console.log )
@@ -225,24 +184,12 @@ Returns aggregate scores, combined for all companies per sector, or all sectors 
 
 **Details: http://api.climatecounts.org/docs/AggregateScores.htm**
 
-<table>
-	<th>parameter</th>
-	<th>required</th>
-	<th>description</th>
-	<th>values</th>
-	<tr>
-		<td>params</td>
-		<td>optional</td>
-		<td>object with method parameters</td>
-		<td>{ Search: 'amer' }</td>
-	</tr>
-	<tr>
-		<td>callback</td>
-		<td>required</td>
-		<td>function that received the result object, or false on faillure</td>
-		<td></td>
-	</tr>
-</table>
+```
+Param      Required   Description                     Example
+--------   --------   -----------------------------   ----------------
+params     optional   Object with method parameters   {Search: 'amer'}
+callback   required   Function to receive result      console.log
+```
 
 ```js
 api.aggregatescores( {Year: 2011}, console.log )
