@@ -115,8 +115,8 @@ var app = {
 			var data = ''
 			response.on( 'data', function( part ) { data += part })
 			response.on( 'end', function() {
-				data = data.toString().trim()
-				if( data.length >= 2 && data.substr(0,1) == '{' && data.substr( data.length -1, 1 ) == '}' ) {
+				data = data.toString('utf8').trim()
+				if( data.match(/^(\{.*\}|\[.*\])$/) ) {
 					data = JSON.parse( data )
 					cb( data[ path ] )
 				} else {
