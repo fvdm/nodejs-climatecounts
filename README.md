@@ -6,7 +6,9 @@ Unofficial [Node.js](http://nodejs.org/) module to access the Climate Counts API
 API documentation: http://api.climatecounts.org
 
 
-# Installation
+Installation
+============
+
 
 ### With NPM
 
@@ -30,7 +32,9 @@ var api = require('./nodejs-climatecounts')
 ```
 
 
-# Usage
+Usage
+=====
+
 
 ```js
 var api = require('climatecounts')
@@ -51,7 +55,9 @@ api.companies( {Search: 'amer'}, console.log )
 ```
 
 
-# Methods
+Methods
+=======
+
 
 ## talk
 ### ( path, [params], callback )
@@ -177,6 +183,7 @@ api.scores( {CompanyID: 1}, console.log )
     Progress: 'Stuck' } ]
 ```
 
+
 ## aggregatescores
 ### ( [params], callback )
 
@@ -219,7 +226,9 @@ api.aggregatescores( {Year: 2011}, console.log )
 ```
 
 
-# Unlicense
+Unlicense
+=========
+
 
 This is free and unencumbered software released into the public domain.
 
