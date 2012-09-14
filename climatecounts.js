@@ -34,96 +34,97 @@ var http = require('http'),
     querystring = require('querystring')
 
 var app = {
-  
-  // Available years
-  availableyears: function( cb ) {
-    app.talk( 'AvailableYears', function( res ) {
-      var result = {}
-      if( res ) {
-        res.forEach( function( year ) {
-          result[ year.Year ] = year
-        })
-      }
-      cb( result )
-    })
-  },
-  
-  // Sectors
-  sectors: function( cb ) {
-    app.talk( 'Sectors', function( res ) {
-      var result = {}
-      if( res ) {
-        res.forEach( function( sector ) {
-          result[ sector.SectorCode ] = sector
-        })
-      }
-      cb( result )
-    })
-  },
-  
-  // Companies
-  companies: function( params, cb ) {
-    if( !cb && typeof params == 'function' ) {
-      var cb = params
-      var params = {}
-    }
-    
-    app.talk( 'Companies', params, function( res ) {
-      var result = {}
-      if( res ) {
-        res.forEach( function( company ) {
-          result[ company.CompanyID ] = company
-        })
-      }
-      cb( result )
-    })
-  },
-  
-  brands: function( cb ) {
-    app.talk( 'Brands', cb )
-  },
-  
-  // Scores
-  scores: function( params, cb ) {
-    if( !cb && typeof params == 'function' ) {
-      var cb = params
-      var params = {}
-    }
-    
-    app.talk( 'Scores', params, cb )
-  },
-  
-  // Aggregate scores
-  aggregatescores: function( params, cb ) {
-    if( !cb && typeof params == 'function' ) {
-      var cb = params
-      var params = {}
-    }
-    app.talk( 'AggregateScores', params, cb )
-  },
-  
-  // Communicate
-  talk: function( path, fields, cb ) {
-    if( !cb && typeof fields == 'function' ) {
-      var cb = fields
-      var fields = {}
-    }
-    
-    var url = 'http://api.climatecounts.org/1/'+ path +'.json?'+ querystring.stringify( fields )
-    http.get( url, function( response ) {
-      var data = ''
-      response.on( 'data', function( part ) { data += part })
-      response.on( 'end', function() {
-        data = data.toString().trim()
-        if( data.length >= 2 && data.substr(0,1) == '{' && data.substr( data.length -1, 1 ) == '}' ) {
-          data = JSON.parse( data )
-          cb( data[ path ] )
-        } else {
-          cb( false )
-        }
-      })
-    })
-  }
+
+	// Available years
+	availableyears: function( cb ) {
+		app.talk( 'AvailableYears', function( res ) {
+			var result = {}
+			if( res ) {
+				res.forEach( function( year ) {
+					result[ year.Year ] = year
+				})
+			}
+			cb( result )
+		})
+	},
+	
+	// Sectors
+	sectors: function( cb ) {
+		app.talk( 'Sectors', function( res ) {
+			var result = {}
+			if( res ) {
+				res.forEach( function( sector ) {
+					result[ sector.SectorCode ] = sector
+				})
+			}
+			cb( result )
+		})
+	},
+	
+	// Companies
+	companies: function( params, cb ) {
+		if( !cb && typeof params == 'function' ) {
+			var cb = params
+			var params = {}
+		}
+		
+		app.talk( 'Companies', params, function( res ) {
+			var result = {}
+			if( res ) {
+				res.forEach( function( company ) {
+					result[ company.CompanyID ] = company
+				})
+			}
+			cb( result )
+		})
+	},
+	
+	// Brands
+	brands: function( cb ) {
+		app.talk( 'Brands', cb )
+	},
+	
+	// Scores
+	scores: function( params, cb ) {
+		if( !cb && typeof params == 'function' ) {
+			var cb = params
+			var params = {}
+		}
+		
+		app.talk( 'Scores', params, cb )
+	},
+	
+	// Aggregate scores
+	aggregatescores: function( params, cb ) {
+		if( !cb && typeof params == 'function' ) {
+			var cb = params
+			var params = {}
+		}
+		app.talk( 'AggregateScores', params, cb )
+	},
+	
+	// Communicate
+	talk: function( path, fields, cb ) {
+		if( !cb && typeof fields == 'function' ) {
+			var cb = fields
+			var fields = {}
+		}
+		
+		var url = 'http://api.climatecounts.org/1/'+ path +'.json?'+ querystring.stringify( fields )
+		http.get( url, function( response ) {
+			var data = ''
+			response.on( 'data', function( part ) { data += part })
+			response.on( 'end', function() {
+				data = data.toString().trim()
+				if( data.length >= 2 && data.substr(0,1) == '{' && data.substr( data.length -1, 1 ) == '}' ) {
+					data = JSON.parse( data )
+					cb( data[ path ] )
+				} else {
+					cb( false )
+				}
+			})
+		})
+	}
 }
 
 // ready
