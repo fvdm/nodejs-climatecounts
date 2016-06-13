@@ -5,6 +5,12 @@ Unofficial [Node.js](http://nodejs.org/) module to access the Climate Counts API
 
 API documentation: http://api.climatecounts.org
 
+DEPRECATED
+==========
+
+The ClimateCounts.org API is gone rendering this package useless.
+All methods will fail.
+
 
 Installation
 ============
