@@ -5,7 +5,7 @@
     "url":                "http://frankl.in"
   },
   "name":                 "climatecounts",
-  "description":          "Access ClimateCounts.org API methods",
+  "description":          "DEPRECATED - Access ClimateCounts.org API methods",
   "version":              "1.0.2",
   "repository": {
     "type":               "git",
