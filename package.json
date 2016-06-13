@@ -1,29 +1,35 @@
 {
   "author": {
-    "name":               "Franklin van de Meent",
-    "email":              "fr@nkl.in",
-    "url":                "http://frankl.in"
+    "name": "Franklin van de Meent",
+    "email": "fr@nkl.in",
+    "url": "http://frankl.in"
   },
-  "name":                 "climatecounts",
-  "description":          "DEPRECATED - Access ClimateCounts.org API methods",
-  "version":              "1.0.2",
+  "name": "climatecounts",
+  "description": "DEPRECATED - Access ClimateCounts.org API methods",
+  "version": "1.0.3",
   "repository": {
-    "type":               "git",
-    "url":                "git://github.com/fvdm/nodejs-climatecounts.git"
+    "type": "git",
+    "url": "git://github.com/fvdm/nodejs-climatecounts.git"
   },
   "bugs": {
-    "url":                "https://github.com/fvdm/nodejs-climatecounts/issues"
+    "url": "https://github.com/fvdm/nodejs-climatecounts/issues"
   },
-  "main":                 "climatecounts.js",
-  "dependencies":         {},
-  "devDependencies":      {},
+  "main": "climatecounts.js",
+  "dependencies": {},
+  "devDependencies": {},
   "optionalDependencies": {},
   "engines": {
-    "node":               "*"
+    "node": "*"
   },
-  "keywords":             ["climate", "environment", "statistics", "middleware", "api"],
+  "keywords": [
+    "climate",
+    "environment",
+    "statistics",
+    "middleware",
+    "api"
+  ],
   "license": {
-    "type":               "Public Domain",
-    "url":                "https://github.com/fvdm/nodejs-climatecounts/raw/master/UNLICENSE"
+    "type": "Public Domain",
+    "url": "https://github.com/fvdm/nodejs-climatecounts/raw/master/UNLICENSE"
   }
 }
